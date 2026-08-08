@@ -2,6 +2,8 @@
 
 # 🇩🇪🇦🇹🇨🇭 hAI.iptv_List&Play
 
+
+
 Ein kuratiertes GitHub-Repository für **legale, öffentlich verfügbare IPTV-Quellen** aus **Deutschland, Österreich und der Schweiz**.
 
 > 🧠 Projekt: **hAI.iptv_List&Play** – Repository: `https://github.com/jbkunama1/hAi.iptv_List-Play`

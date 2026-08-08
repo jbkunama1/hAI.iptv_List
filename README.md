@@ -1,6 +1,10 @@
 [<img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" width="120" height="28" alt="Buy me a coffee">](https://www.buymeacoffee.com/highfish)
 
 # 🇩🇪🇦🇹🇨🇭 hAI.iptv_List&Play
+[![Status](https://img.shields.io/badge/status-active-brightgreen?style=for-the-badge)](https://github.com/jbkunama1/hAI.iptv_List)
+[![IPTV](https://img.shields.io/badge/IPTV-m3u-FF6B35?style=for-the-badge&logo=tv&logoColor=white)](https://github.com/jbkunama1/hAI.iptv_List)
+[![License](https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge)](LICENSE)
+
 
 
 

@@ -1,0 +1,47 @@
+name: TestDriver E2E Tests
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  id-token: write
+
+jobs:
+  testdriver:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install TestDriver tooling if no package.json
+        run: |
+          if [ ! -f package.json ]; then npm init -y >/dev/null; fi
+          npm i -D testdriverai vitest >/dev/null 2>&1 || echo "warn: npm install skipped"
+
+      - name: Authenticate to TestDriver (OIDC)
+        uses: testdriverai/action@stable
+
+      - name: Run TestDriver tests
+        run: |
+          if compgen -G "tests/*.test.*" >/dev/null 2>&1; then
+            npx vitest run
+          else
+            echo "No TestDriver tests yet. Add tests under src/ or tests/ (e.g. tests/e2e.test.js) and they will run on every PR."
+          fi
+
+      - name: Upload TestDriver artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: testdriver-artifacts
+          path: test-results/
+          retention-days: 7

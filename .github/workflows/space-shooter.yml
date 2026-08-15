@@ -1,0 +1,12 @@
+name: github-space-shooter
+
+on:
+  schedule:
+    - cron: '0 9 * * 1'
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Execute github-space-shooter action
+        uses: github-space-shooter@v1
